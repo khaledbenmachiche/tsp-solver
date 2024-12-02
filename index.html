@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://kit.fontawesome.com/06aa4f4a0c.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <meta charset="utf-8" />
+  <script src="./src/controls.js"></script>
+  <script src="sketch.js"></script>
+  <script src="./src/vertex.js"></script>
+  <script src="./src/edge.js"></script>
+  <script src="./src/tsp_logic_glouton.js"></script>
+  <script src="./src/tsp_logic_dp.js"></script>
+  <script src="./src/tsp_logic_branch_and_bound.js"></script>
+  <script src="./src/graph.js"></script>
+  <link rel="icon" href="https://em-content.zobj.net/source/apple/354/linked-paperclips_1f587-fe0f.png" type="image/x-icon" />
+  <title>PVC</title>
+</head>
+<body class="bg-gradient-to-br from-blue-500 to-purple-600 font-sans leading-normal tracking-normal">
+  <div class="flex gap-4 p-8">
+    <!-- Sidebar -->
+    <aside class="w-64 h-screen bg-white rounded-3xl shadow-lg p-6 flex flex-col items-center justify-between">
+      <div class="w-full">
+        <h1 class="text-3xl font-bold text-center text-blue-600 mb-8">Graph</h1>
+        <ul class="space-y-6">
+          <li>
+            <button id="add-vertex-btn" class="w-full border px-4 py-3 text-blue-700 bg-white rounded-lg shadow-lg hover:bg-blue-50 focus:outline-none flex items-center justify-center">
+              <i class="fas fa-plus-circle mr-2"></i> Ajouter Noeud
+            </button>
+          </li>
+          <li>
+            <button id="add-edge-btn" class="w-full border px-4 py-3 text-blue-700 bg-white rounded-lg shadow-lg hover:bg-blue-50 focus:outline-none flex items-center justify-center">
+              <i class="fas fa-link mr-2"></i> Ajouter Arrete
+            </button>
+          </li>
+          <li>
+            <button id="delete-vertex-btn" class="w-full border px-4 py-3 text-blue-700 bg-white rounded-lg shadow-lg hover:bg-blue-50 focus:outline-none flex items-center justify-center">
+              <i class="fas fa-trash-alt mr-2"></i> Supprimer Noeud
+            </button>
+          </li>
+          <li>
+            <button id="resolution-pvc" class="w-full border px-4 py-3 text-blue-700 bg-white rounded-lg shadow-lg hover:bg-blue-50 focus:outline-none flex items-center justify-center">
+              <i class="fas fa-search mr-2"></i> Résoudre PVC
+            </button>
+          </li>
+          <li>
+            <button id="effacer-canvas-btn" class="w-full mt-60 px-4 py-3 text-white bg-red-500 border rounded-lg shadow-md hover:bg-red-300 focus:outline-none flex items-center justify-center">
+              <i class="fas fa-eraser mr-2"></i> Effacer Le Canevas
+            </button>
+          </li>
+          <li>
+            <button id="save-img-button" class="w-full px-4 py-3 border text-white bg-blue-500 rounded-lg shadow-md hover:bg-blue-400 focus:outline-none flex items-center justify-center">
+              <i class="fas fa-save mr-2"></i> Enregistrer Image
+            </button>
+          </li>
+        </ul>
+      </div>
+      <p id="hint"></p>
+    </aside>
+    <div id="results" class="ml-auto h-1/2 shadow-md rounded-md p-10">
+      <table class="table-auto w-full border-collapse border">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="border border-slate-500 text-blue-600 px-4 py-2">Method</th>
+            <th class="border border-slate-500 text-blue-600 px-4 py-2">Hamiltonian Cycle</th>
+            <th class="border border-slate-500 text-blue-600 px-4 py-2">Cycle Cost</th>
+            <th class="border border-slate-500 text-blue-600 px-4 py-2">Execution Time (ms)</th>
+            <th class="border border-slate-500 text-blue-600 px-4 py-2">Complexity</th>
+          </tr>
+        </thead>
+        <tbody id="resultsTableBody">
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

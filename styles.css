@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "M PLUS 1 Code", monospace;
+  background-color: #003366; /* Deep blue */
+  color: #ffffff;
+}
+
+.control-pannel {
+  padding: 20px 0;
+  width: 200px;
+  height: 100vh;
+  background-color: #0055a5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10; /* Ensures it's above the canvas */
+  gap: 20px;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 1000;
+}
+
+.action-btn {
+  vertical-align: middle;
+  padding: 10px 20px;
+  border: 1px solid #ffffff;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.1s;
+  cursor: pointer;
+}
+
+
+.action-btn:hover {
+  background-color: #0077cc; /* Slight hover effect */
+  transform: scale(1.05);
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  font-family: "M PLUS 1 Code", monospace;
+  color: #ffffff;
+}
+
+/* Blink animation and link styles */
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+a:visited {
+  color: #ffffff;
+}
+
+/* Adjusted control panel container for blue theme */
+.control-pannel-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "M PLUS 1 Code", monospace;
+  color: #ffffff;
+}
