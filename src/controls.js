@@ -82,17 +82,17 @@ function solveTSP() {
   const graphCopy = deepCopyGraph(graph);
   
 
-  const greedyTime = measureExecutionTime(() => tspGreedySolver(graphCopy), [], 10);
+  const greedyTime = measureExecutionTime(() => tspGreedySolver(graphCopy), [], 1);
   const greedyResult = tspGreedySolver(graphCopy);
-  displayResults("Greedy Algorithm", greedyResult.cycle, greedyResult.totalCost, greedyTime, "O(n^2)");
+  displayResults("Algorithme Gloutton", greedyResult.cycle.map(item=>item+1), greedyResult.totalCost, greedyTime, "O(n^2)");
 
-  const bnbTime = measureExecutionTime(() => tspBranchAndBoundSolver(graphCopy.getCostMatrix()), [], 10);
-  const bnbResult = tspBranchAndBoundSolver(graphCopy.getCostMatrix());
-  displayResults("Branch and Bound", bnbResult.final_path, bnbResult.final_cost, bnbTime,"O(b^n)");
-
-  const dynamicTime = measureExecutionTime(() => tspDynamicProgrammingSolver(graphCopy), [], 10);
+  const dynamicTime = measureExecutionTime(() => tspDynamicProgrammingSolver(graphCopy), [], 1);
   const dynamicResult = tspDynamicProgrammingSolver(graphCopy);
-  displayResults("Backtracking", dynamicResult.optimalPath, dynamicResult.totalCost, dynamicTime,"O((n^2)*(2^n))");
+  displayResults("Backtracking", dynamicResult.optimalPath.map(item=>item+1), dynamicResult.totalCost, dynamicTime,"O((n^2)*(2^n))");
+
+  const bnbTime = measureExecutionTime(() => tspBranchAndBoundSolver(graphCopy.getCostMatrix()), [], 1);
+  const bnbResult = tspBranchAndBoundSolver(graphCopy.getCostMatrix());
+  displayResults("Branch and Bound", bnbResult.final_path.map(item=>item+1), bnbResult.final_cost, bnbTime,"O(b^n)");
 }
 
 function displayResults(methodName, cycle, cost, time,complexity) {
