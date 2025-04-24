@@ -13,7 +13,7 @@ It allows users to interactively create a graph by placing and connecting nodes,
 
 ##  Project Structure
 
-
+```
 project/
 │
 ├── index.html                    # Main HTML file (UI + canvas + results table)
