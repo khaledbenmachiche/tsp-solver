@@ -1,5 +1,3 @@
-Below is the Markdown file content you provided, formatted as a proper Markdown file. I've cleaned it up slightly for consistency and clarity while preserving all the original content and structure. You can copy this directly into a `.md` file (e.g., `README.md`).
-
 # Travelling Salesman Problem Visualizer
 
 This project is a web-based visualizer for solving the **Travelling Salesman Problem (TSP)** using three classic approaches:
