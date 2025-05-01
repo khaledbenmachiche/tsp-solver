@@ -79,7 +79,7 @@ project/
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **JavaScript** (ES6)
 - **p5.js** for canvas interaction
